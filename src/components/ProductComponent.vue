@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-      bu home page
-  </div>
+        <div>
+
+        </div>
 </template>
 
 <script setup>
