@@ -44,7 +44,7 @@
                 <div class="lang">
                         <a href="">RU</a>
                         /
-                        <a href="">UA</a>
+                        <a class="ua text-white" href="">UA</a>
                 </div>
                 <div class="profile">
                         <router-link to="/profile" >
@@ -58,7 +58,49 @@
         </div>
       </div>
     </div>
-    <div class="nav__bottom"></div>
+    <div class="nav__bottom flex items-center py-8 ">
+      <div class="container mx-auto flex gap-8 items-center">
+        <div class="nb__left flex gap-12 items-center">
+            <img class="comp_img h-12 w-48" src="/src/assets/icons/Frame 7780.svg" alt="">
+          <div class="backround bg-green-500 flex gap-5 py-4 px-10 rounded-md items-center">
+            <strong class="katalog text-white">КАТАЛОГ ТОВАРОВ</strong>
+            <img class="kub h-7" src="/src/assets/icons/Catalog.svg" alt="">
+          </div>
+
+        </div>
+        <div class="nb__center border rounded-md">
+         <div class="father flex items-center ">
+          <div class="double border-none outline-none py-3 px-4">
+            <input class="input outline-none w-96" type="text" placeholder="Поиск ">
+          </div>
+          <div class="single bg-blue-800 py-3 px-4 rounded">
+            <img src="/src/assets/icons/search.svg" alt="">
+          </div>
+         </div>
+        </div>
+        <div class="nb__right flex items-center gap-6">
+          <div class="ikkalasi flex gap-6">
+            <strong class="tel text-blue-800 text-lg">050 065 87 96</strong>
+          <img src="/src/assets/icons/vector.svg" alt="">
+          </div>
+          <div class="lime w-0.5 h-6 bg-blue-900"></div>
+          <div class="uchchalasi flex items-center gap-6 mb-5">
+            <div class="kons">
+              <div class="love bg-amber-400 w-6 h-6 rounded-full translate-y-1 translate-x-6 py- px-1 text-center">22</div>
+              <img src="/src/assets/icons/Vector 1.svg" alt="">
+              </div>
+            <div class="kons">
+              <div class="love bg-amber-400 w-6 h-6 rounded-full translate-y-2 translate-x-6 py- px-1 text-center">22</div>
+            <img src="/src/assets/icons/Frame 7786.svg" alt="">
+            </div>
+            <div class="kons">
+            <div class="love bg-green-500 w-6 h-6 rounded-full translate-y-2 translate-x-6 py- px-1 text-center">22</div>
+              <img src="/src/assets/icons/Shape.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
