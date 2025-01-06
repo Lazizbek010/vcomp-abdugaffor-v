@@ -40,12 +40,15 @@
               to="/"
               v-for="link in links"
               :key="link"
-              >{{ link.name }}</router-link
+              >{{ $t(link.name) }}</router-link
             >
           </div>
         </div>
         <div class="nav__top-right flex items-center gap-4">
           <div class="lang">
+            <button @click="changeLanguage('en')">English</button>
+    <button @click="changeLanguage('ru')">Russia</button>
+    <button @click="changeLanguage('uz')">O'zbekcha</button>
             <a href="">RU</a>
             /
             <a class="ua text-white" href="">UA</a>
@@ -149,34 +152,21 @@
 <script setup>
 import { ref, reactive } from "vue";
 import {useCounterStore} from '../store/counter.js'
-const counterStore = useCounterStore()
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+import lang from "../locales/lang.json";
 
-const links = ref([
-  {
-    name: "Акции",
-    link: "/aksiya",
-  },
-  {
-    name: "Кредит",
-    link: "/aksiya",
-  },
-  {
-    name: "Оплата и доставка",
-    link: "/aksiya",
-  },
-  {
-    name: "Помощь",
-    link: "/aksiya",
-  },
-  {
-    name: "Скупка Б/У",
-    link: "/aksiya",
-  },
-  {
-    name: "Контакты",
-    link: "/aksiya",
-  },
-]);
+const counterStore = useCounterStore()
+const { locale , t} = useI18n();
+
+function changeLanguage(lang) {
+  locale.value = lang
+}
+
+
+const links = computed(() => {
+  return lang[locale.value]?.menu || [];
+});
 </script>
 
 <style lang="scss" scoped>

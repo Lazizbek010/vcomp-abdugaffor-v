@@ -1,0 +1,93 @@
+{
+        "ru": {
+          "hello": "Привет",
+          "world": "мир",
+          "menu": [
+            {
+              "name": "Акции",
+              "link": "/aksiya"
+            },
+            {
+              "name": "Кредит",
+              "link": "/kredit"
+            },
+            {
+              "name": "Оплата и доставка",
+              "link": "/oplata"
+            },
+            {
+              "name": "Помощь",
+              "link": "/pomosh"
+            },
+            {
+              "name": "Скупка Б/У",
+              "link": "/skupka"
+            },
+            {
+              "name": "Контакты",
+              "link": "/kontakty"
+            }
+          ]
+        },
+        "uz": {
+          "hello": "Salom",
+          "world": "dunyo",
+          "menu": [
+            {
+              "name": "Aksiyalar",
+              "link": "/aksiya"
+            },
+            {
+              "name": "Kredit",
+              "link": "/kredit"
+            },
+            {
+              "name": "To'lov va yetkazib berish",
+              "link": "/oplata"
+            },
+            {
+              "name": "Yordam",
+              "link": "/pomosh"
+            },
+            {
+              "name": "Sotib olish",
+              "link": "/skupka"
+            },
+            {
+              "name": "Aloqa",
+              "link": "/kontakty"
+            }
+          ]
+        },
+        "en": {
+          "hello": "Hi",
+          "world": "world",
+          "menu": [
+            {
+              "name": "Promotions",
+              "link": "/aksiya"
+            },
+            {
+              "name": "Credit",
+              "link": "/kredit"
+            },
+            {
+              "name": "Payment & Delivery",
+              "link": "/oplata"
+            },
+            {
+              "name": "Help",
+              "link": "/pomosh"
+            },
+            {
+              "name": "Buyback",
+              "link": "/skupka"
+            },
+            {
+              "name": "Contacts",
+              "link": "/kontakty"
+            }
+          ]
+        }
+      }
+      

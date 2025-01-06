@@ -7,42 +7,123 @@
         <div class="container mx-auto flex gap-4">
           <!-- Chap Menu (Комплектующие ПК) -->
           <div class="banner__left w-96">
-            <div v-for="item in 10" :key="item" class="flex justify-between items-center bg-white p-4  border-b-2">
+            <div
+              v-for="item in 10"
+              :key="item"
+              class="flex justify-between items-center bg-white p-4 border-b-2"
+            >
               <div class="flex items-center gap-2">
-                <img src="/src/assets/icons/Frame 455510.svg" alt="" class="w-6 h-6">
-                <span class="text-indigo-950 font-medium">Комплектующие ПК</span>
+                <img
+                  src="/src/assets/icons/Frame 455510.svg"
+                  alt=""
+                  class="w-6 h-6"
+                />
+                <span class="text-indigo-950 font-medium"
+                  >Комплектующие ПК</span
+                >
               </div>
-              <img src="/src/assets/icons/Right.svg" alt="" class="w-4 h-4">
+              <img src="/src/assets/icons/Right.svg" alt="" class="w-4 h-4" />
             </div>
           </div>
-
+          <h1>{{ $t("hello") }}</h1>
+          <button @click="changeLanguage('en')">English</button>
+    <button @click="changeLanguage('ru')">Russia</button>
+    <button @click="changeLanguage('uz')">O'zbekcha</button>
           <!-- Banner Content (Right Side) -->
-          <div class="relative bg-gray-900 text-white">
-  <img src="../assets/images/banner.png" alt="Banner Image" class="w-full object-cover h-72 md:h-96">
-  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start p-8">
-    <h1 class="text-4xl md:text-6xl font-bold">TEXT BANNER</h1>
-    <p class="text-lg md:text-xl mt-2">BANNER DESCRIPTION SMALL TEXT</p>
-    <button class="mt-4 px-6 py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">BANNER BUTTON</button>
-  </div>
-  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-    <div class="w-3 h-3 bg-white rounded-full"></div>
-    <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-    <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-  </div>
-</div>
-
+          <div class="banner__right">
+            <div class="swiper-container">
+              <swiper class="mySwiper" :modules="modules" pagination loop>
+                <swiper-slide
+                  class="slide-item"
+                  v-for="(slide, i) in 5"
+                  :key="i"
+                >
+                  <img
+                    :src="`https://picsum.photos/900/300?random=${i}`"
+                    alt=""
+                  />
+                  <div class="slide-item-info flex flex-col gap-4">
+                    <h1>TEXT BANNER</h1>
+                    <p>BANNER DESCRIPTION SMALL TEXT</p>
+                    <button>BANNER BUTTON</button>
+                  </div>
+                </swiper-slide>
+              </swiper>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- <button @click="qoshish">BOSSSSSSSSSSSSSSSSSSSSSSSS</button> -->
     </main>
   </div>
 </template>
 
 <script setup>
-import {useCounterStore} from '../store/counter.js'
-const haaaaa = useCounterStore()
-const { qoshish } = haaaaa;
+import { ref } from "vue";
+import { useCounterStore } from "../store/counter.js";
+
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
+
+
+let modules = ref([Pagination]);
+
+function changeLanguage(lang) {
+  locale.value = lang
+}
 </script>
 
-<style scoped>
+<style>
+.banner__right {
+  max-width: 1145px;
+  width: 100%;
+}
+.mySwiper {
+  width: 100%;
+  height: 400px;
+  background-color: red;
+}
+
+.slide-item {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+.slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.slide-item-info {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 2;
+}
+.slide-item h1 {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.swiper-pagination {
+  text-align: left !important;
+  position: absolute ! important;
+  left: 40px !important;
+  bottom: 40px !important;
+}
 </style>
