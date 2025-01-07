@@ -34,6 +34,7 @@
               />
             </svg>
           </div>
+          <h1>salom</h1>
           <div class="nav__links flex items-center gap-4">
             <router-link
               class="text-white"
