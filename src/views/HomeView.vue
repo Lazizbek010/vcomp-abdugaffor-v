@@ -27,8 +27,8 @@
           </div>
           <h1>{{ $t("hello") }}</h1>
           <button @click="changeLanguage('en')">English</button>
-    <button @click="changeLanguage('ru')">Russia</button>
-    <button @click="changeLanguage('uz')">O'zbekcha</button>
+`    <button @click="changeLanguage('ru')">Russia</button>
+  `  <button @click="changeLanguage('uz')">O'zbekcha</button>
           <!-- Banner Content (Right Side) -->
           <div class="banner__right">
             <div class="swiper-container">
