@@ -34,7 +34,6 @@
               />
             </svg>
           </div>
-          <h1>salom</h1>
           <div class="nav__links flex items-center gap-4">
             <router-link
               class="text-white"
@@ -47,9 +46,9 @@
         </div>
         <div class="nav__top-right flex items-center gap-4">
           <div class="lang">
-            <button @click="changeLanguage('en')">English</button>
-    <button @click="changeLanguage('ru')">Russia</button>
-    <button @click="changeLanguage('uz')">O'zbekcha</button>
+            <button @click="changeLanguage('en')">En</button>/
+            <button @click="changeLanguage('ru')">ru</button>/
+            <button @click="changeLanguage('uz')">ux</button>
             <a href="">RU</a>
             /
             <a class="ua text-white" href="">UA</a>
@@ -139,7 +138,7 @@
               <div
                 class="love bg-green-500 w-6 h-6 rounded-full translate-y-2 translate-x-6 py- px-1 text-center"
               >
-               {{counterStore.cart}}
+                {{ counterStore.cart }}
               </div>
               <img src="/src/assets/icons/Shape.svg" alt="" />
             </div>
@@ -152,18 +151,17 @@
 
 <script setup>
 import { ref, reactive } from "vue";
-import {useCounterStore} from '../store/counter.js'
+import { useCounterStore } from "../store/counter.js";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 import lang from "../locales/lang.json";
 
-const counterStore = useCounterStore()
-const { locale , t} = useI18n();
+const counterStore = useCounterStore();
+const { locale, t } = useI18n();
 
 function changeLanguage(lang) {
-  locale.value = lang
+  locale.value = lang;
 }
-
 
 const links = computed(() => {
   return lang[locale.value]?.menu || [];
